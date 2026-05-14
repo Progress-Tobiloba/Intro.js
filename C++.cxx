@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>  // Required for File Handling
+#include <fstream>
 #include <string>
 #include <limits>
 
@@ -17,10 +17,8 @@ public:
         else Faculty = "General Studies";
     }
 
-    // Default constructor
     Student() {}
 
-    // Function to save data to a file
     void saveToFile() {
         ofstream outFile("database.txt");
         if (outFile.is_open()) {
@@ -35,7 +33,6 @@ public:
         }
     }
 
-    // Function to load data from a file
     bool loadFromFile(string attemptName, string attemptPass) {
         ifstream inFile("database.txt");
         if (inFile.is_open()) {
@@ -73,7 +70,6 @@ public:
        } 
    
 };
-// Validation for numbers
 double getValidNumber(string prompt) {
     double value;
     while (true) {
@@ -97,7 +93,6 @@ int main() {
     cin.ignore(); 
 
     if (choice == 2) {
-        // REGISTRATION
         cout << "Enter Name: "; getline(cin, user.Name);
         cout << "Create Password: "; getline(cin, user.Password);
         cout << "Enter School: "; getline(cin, user.School);
@@ -108,7 +103,6 @@ int main() {
         user.saveToFile();
     } 
     else if (choice == 2){
-        // LOGIN
         string lName, lPass;
         cout << "Enter Name: "; getline(cin, lName);
         cout << "Enter Password: "; getline(cin, lPass);
